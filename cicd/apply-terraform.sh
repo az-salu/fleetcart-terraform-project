@@ -3,6 +3,9 @@
 # fail on any error
 set -eu
 
+# go back to the previous directory
+cd .. 
+
 # initialize terraform
 terraform init
 
