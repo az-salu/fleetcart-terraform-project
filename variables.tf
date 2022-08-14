@@ -73,10 +73,16 @@ variable "multi_az_deployment" {
   type          = bool
 }
 
-# application load balancer variables
-variable "ssl_certificate_arn" {
-  default       = "arn:aws:acm:us-east-1:651783246143:certificate/bf6c8843-59d7-4d9e-be67-68ee9b3608bf"
-  description   = "ssl certificate arn"
+# acm variables
+variable "domain_name" {
+  default       = "aosnotes77.com"
+  description   = "domain name"
+  type          = string
+}
+
+variable "alternative_names" {
+  default       = "*.aosnotes77.com"
+  description   = "sub domain name"
   type          = string
 }
 
@@ -109,13 +115,6 @@ variable "ec2_instance_type" {
 variable "ec2_key_pair_name" {
   default       = "myec2key"
   description   = "ec2 key pair name"
-  type          = string
-}
-
-# route 53 variables
-variable "domain_name" {
-  default       = "aosnotes77.com"
-  description   = "domain name"
   type          = string
 }
 
