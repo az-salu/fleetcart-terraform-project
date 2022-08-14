@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+
+  pre_build:
+    commands:
+      - chmod +x install-terraform.sh configure-named-profile.sh
+      - ./install-terraform.sh #install terraform
+      - ./configure-named-profile.sh #configure named profile
+
+  # build:
+  #   run-as: Linux-user-name
+  #   on-failure: ABORT | CONTINUE
+  #   commands:
+  #     - command
+  #     - command
